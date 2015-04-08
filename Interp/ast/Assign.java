@@ -71,6 +71,13 @@ public class Assign extends StmtExpr {
      *  variables, respectively.
      */
     public int eval(int[] globals, int[] locals) {
-        throw new Error("eval not implemented for Assign");
+        int result = rhs.eval(globals,locals);
+	if(slot>=0) {
+	  locals[slot]=result;
+	} else {
+	    globals[-(slot+1)] = result;
+	}
+	return result;
+        //return (slot>=0) ? locals[slot] : globals[-(slot+1)];
     }
 }

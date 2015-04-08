@@ -29,6 +29,6 @@ public class Empty extends Stmt {
      *  has executed a return.
      */
     public boolean exec(int[] globals, int[] locals) {
-        throw new Error("exec not implemented for Empty");
+      return true;
     }
 }

@@ -22,6 +22,7 @@ public class Sub extends ArithBinExpr {
      *  variables, respectively.
      */
     public int eval(int[] globals, int[] locals) {
-        throw new Error("eval not implemented for Sub");
+      return left.eval(globals, locals) - right.eval(globals, locals);
+
     }
 }

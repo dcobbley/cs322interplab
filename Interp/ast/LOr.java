@@ -22,6 +22,6 @@ public class LOr extends LogBinExpr {
      *  variables, respectively.
      */
     public int eval(int[] globals, int[] locals) {
-        throw new Error("eval not implemented for LOr");
+      return b2i(i2b(left.eval(globals, locals)) || i2b(right.eval(globals, locals)));
     }
 }

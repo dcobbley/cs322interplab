@@ -22,6 +22,7 @@ public class Lte extends RelBinExpr {
      *  variables, respectively.
      */
     public int eval(int[] globals, int[] locals) {
-        throw new Error("eval not implemented for Lte");
+      return b2i(left.eval(globals, locals) <= right.eval(globals, locals));
+
     }
 }
