@@ -22,6 +22,6 @@ public class LAnd extends LogBinExpr {
      *  variables, respectively.
      */
     public int eval(int[] globals, int[] locals) {
-      return b2i(i2b(left.eval(globals, locals)) || i2b(right.eval(globals, locals)));
+      return b2i(i2b(left.eval(globals, locals)) && i2b(right.eval(globals, locals)));
     }
 }

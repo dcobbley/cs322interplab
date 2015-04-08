@@ -88,6 +88,16 @@ public class If extends Stmt {
      *  has executed a return.
      */
     public boolean exec(int[] globals, int[] locals) {
-        throw new Error("exec not implemented for If");
+//not implemented correctly yet
+      if(Expr.i2b(test.eval(globals,locals))){
+        if(ifTrue.exec(globals, locals)){
+          return true;
+        }
+        if(ifFalse.exec(globals, locals)){
+	  return true;
+	}
+      }
+      return false;
+
     }
 }

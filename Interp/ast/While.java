@@ -54,6 +54,11 @@ public class While extends Stmt {
      *  has executed a return.
      */
     public boolean exec(int[] globals, int[] locals) {
-        throw new Error("exec not implemented for While");
+      while(Expr.i2b(test.eval(globals,locals))){
+	if(body.exec(globals, locals)){
+	  return true;
+	}
+      }
+      return false;
     }
 }

@@ -40,6 +40,7 @@ public class ExprStmt extends InitStmt {
      *  has executed a return.
      */
     public boolean exec(int[] globals, int[] locals) {
-        throw new Error("exec not implemented for ExprStmt");
+      exp.eval(globals, locals);
+      return false;
     }
 }
