@@ -88,14 +88,15 @@ public class If extends Stmt {
      *  has executed a return.
      */
     public boolean exec(int[] globals, int[] locals) {
-//not implemented correctly yet
       if(Expr.i2b(test.eval(globals,locals))){
         if(ifTrue.exec(globals, locals)){
           return true;
         }
+      }
+      else{
         if(ifFalse.exec(globals, locals)){
-	  return true;
-	}
+	      return true;
+	    }
       }
       return false;
 
